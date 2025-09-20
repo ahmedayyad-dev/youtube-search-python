@@ -17,12 +17,12 @@ setuptools.setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'httpx>=0.14.2'
+        'httpx>=0.26.0'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.8',
 )
