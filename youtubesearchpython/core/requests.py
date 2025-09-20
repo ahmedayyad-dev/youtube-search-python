@@ -8,7 +8,7 @@ class RequestCore:
         self.url = None
         self.data = None
         self.timeout = 2
-        self.proxy = {}
+        self.proxy = None
         http_proxy = os.environ.get("HTTP_PROXY")
         if http_proxy:
             self.proxy["http://"] = http_proxy
