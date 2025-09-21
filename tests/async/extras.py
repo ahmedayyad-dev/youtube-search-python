@@ -6,8 +6,6 @@ async def main():
     print(video)
     videoInfo = await Video.getInfo('https://youtu.be/z0GKGpObgPY')
     print(videoInfo)
-    videoFormats = await Video.getFormats('z0GKGpObgPY')
-    print(videoFormats)
 
 
     suggestions = await Suggestions.get('NoCopyrightSounds', language = 'en', region = 'US')
@@ -59,3 +57,4 @@ async def main():
 
 
 asyncio.run(main())
+
