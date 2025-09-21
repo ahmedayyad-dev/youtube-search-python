@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "youtube-search-python"
-version = "1.6.8"
+version = "1.6.9"
 authors = [
     {name = "Hitesh Kumar Saini", email = "saini123hitesh@gmail.com"}
 ]
