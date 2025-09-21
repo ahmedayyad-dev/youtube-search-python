@@ -4,9 +4,6 @@
 
 ## Fork with improvements and fixes. Updated: December 2024.
 
-[![GitHub Release](https://img.shields.io/github/v/release/ahmedayyad-dev/youtube-search-python?style=for-the-badge)](https://github.com/ahmedayyad-dev/youtube-search-python/releases)
-[![GitHub Downloads](https://img.shields.io/github/downloads/ahmedayyad-dev/youtube-search-python/total?style=for-the-badge)](https://github.com/ahmedayyad-dev/youtube-search-python)
-
 ## Installing
 
 ```bash
