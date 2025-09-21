@@ -5,8 +5,6 @@ video = Video.get('https://www.youtube.com/watch?v=z0GKGpObgPY', mode = ResultMo
 print(video)
 videoInfo = Video.getInfo('https://youtu.be/z0GKGpObgPY', mode = ResultMode.json)
 print(videoInfo)
-videoFormats = Video.getFormats('z0GKGpObgPY')
-print(videoFormats)
 
 
 suggestions = Suggestions(language = 'en', region = 'US')
@@ -56,3 +54,4 @@ print(len(channel.result["playlists"]))
 while channel.has_more_playlists():
     channel.next()
     print(len(channel.result["playlists"]))
+
