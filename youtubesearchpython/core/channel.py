@@ -172,7 +172,7 @@ class ChannelCore(RequestCore):
 
             extracted.append(video_info)
 
-        return extracted
+        return extracted[:-1]
 
     def extract_playlists_info(self):
         extracted = []
