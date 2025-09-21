@@ -2,7 +2,7 @@
 
 ##### Search for YouTube videos, channels & playlists. Get video & playlist information using link. Get search suggestions. WITHOUT YouTube Data API v3.
 
-## There are no active project maintainers since 23rd June 2022. Details: [Here](https://github.com/alexmercerind/youtube-search-python/issues/189)
+## Fork with improvements and fixes. Updated: December 2024.
 
 [![PyPI - Version](https://img.shields.io/pypi/v/youtube-search-python?style=for-the-badge)](https://pypi.org/project/youtube-search-python)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/youtube-search-python?label=DOWNLOADS&style=for-the-badge)](https://pypi.org/project/youtube-search-python)
@@ -651,21 +651,17 @@ Getting information about video or its formats using video link or video ID.
 
 `Video.get` method will give both information & formats of the video
 `Video.getInfo` method will give only information about the video.
-`Video.getFormats` method will give only formats of the video.
 
 You may either pass link or ID, method will take care itself.
 
 YouTube doesn't provide uploadDate and publishDate in its InnerTube API, thus we have to use HTML requests to get it.
 This is disabled by default as it is very inefficient, but if you really need it, you can explicitly set parameter to Video.get() function: get_upload_date=True
-By default, we use InnerTube API for Video.get() and Video.getFormats(), meanwhile we use HTML parsing on Video.getInfo()
-You can set get_upload_date ONLY TO Video.get(), as you don't get info with Video.getFormats()
+By default, we use InnerTube API for Video.get(), meanwhile we use HTML parsing on Video.getInfo()
 '''
 video = Video.get('https://www.youtube.com/watch?v=z0GKGpObgPY', mode = ResultMode.json, get_upload_date=True)
 print(video)
 videoInfo = Video.getInfo('https://youtu.be/z0GKGpObgPY', mode = ResultMode.json)
 print(videoInfo)
-videoFormats = Video.getFormats('z0GKGpObgPY')
-print(videoFormats)
 ```
 
 <details>
@@ -882,7 +878,7 @@ print(videoFormats)
 '''
 Getting information about playlist or videos in it using its link.
 
-`Playlist.get` method will give both information & formats of the playlist
+`Playlist.get` method will give information about the playlist
 `Playlist.getInfo` method will give only information about the playlist.
 `Playlist.getVideos` method will give only videos in the playlist.
 
