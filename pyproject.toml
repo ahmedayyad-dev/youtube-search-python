@@ -22,7 +22,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/ahmedayyad-dev/youtube-search-python"
+Homepage = "https://github.com/ahmedayyad-dev/youtube-search-python-fork"
 
 [tool.setuptools.packages.find]
 include = ["youtubesearchpython*"]

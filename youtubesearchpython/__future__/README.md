@@ -29,7 +29,7 @@ It is non-blocking & substantially faster than sync youtube-search-python.
 ## Install
 
 ```bash
-pip install git+https://github.com/ahmedayyad-dev/youtube-search-python.git
+pip install git+https://github.com/ahmedayyad-dev/youtube-search-python-fork.git
 ```
 
 ## Usage

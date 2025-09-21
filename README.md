@@ -7,7 +7,7 @@
 ## Installing
 
 ```bash
-pip3 install git+https://github.com/ahmedayyad-dev/youtube-search-python.git
+pip3 install git+https://github.com/ahmedayyad-dev/youtube-search-python-fork.git
 ```
 
 ## Sync
