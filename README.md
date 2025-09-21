@@ -10,7 +10,7 @@
 ## Installing
 
 ```bash
-pip3 install youtube-search-python
+pip3 install git+https://github.com/ahmedayyad-dev/youtube-search-python.git
 ```
 
 ## Sync
