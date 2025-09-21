@@ -2,8 +2,6 @@
 
 #### Search for YouTube videos, channels & playlists & get video information using link WITHOUT YouTube Data API v3.
 
-##### Important: As of v1.6.1, we no longer use PyTube (see https://github.com/alexmercerind/youtube-search-python/pull/155). You have to install yt-dlp in order to use StreamURLFetcher: `pip install yt-dlp`
-
 Works without YouTube Data API v3 and has zero dependencies.
 
 Working as of 2022.
@@ -31,7 +29,7 @@ It is non-blocking & substantially faster than sync youtube-search-python.
 ## Install
 
 ```bash
-pip install youtube-search-python
+pip install git+https://github.com/ahmedayyad-dev/youtube-search-python.git
 ```
 
 ## Usage
@@ -1064,36 +1062,6 @@ print(result)
         }
     ]
 }
-```
-
-</details>
-
-#### Getting direct stream URL of a video
-
-This class is able fetch video URLs without any additional web requests (that's fast), as one might already have same response at the time of showing it to the user.
-
-For making use of this functionality, you must install [yt-dlp](https://github.com/yt-dlp/yt-dlp) as a dependency.
-StreamURLFetcher makes slight improvements & changes to YouTube class from [yt-dlp](https://github.com/yt-dlp/yt-dlp).
-
-```py
-from youtubesearchpython.__future__ import *
-fetcher = StreamURLFetcher()
-''' It is recommended to call this method only once & avoid reinstantiating this class '''
-await fetcher.getJavaScript()
-video = await Video.get("https://www.youtube.com/watch?v=aqz-KE-bpKQ")
-url = await fetcher.get(video, 251)
-print(url)
-
-'''
-`getAll` method returns all stream URLs unlike `get` method which needs itag in its second parameter.
-'''
-```
-
-<details>
- <summary> Example Result</summary>
-
-```json
-"https://r6---sn-gwpa-5bgk.googlevideo.com/videoplayback?expire=1610798125&ei=zX8CYITXEIGKz7sP9MWL0AE&ip=2409%3A4053%3A803%3A2b22%3Adc68%3Adfb9%3Aa676%3A26a3&id=o-APBakKSE2_eMDMegtCmeWXfuhhUfAzJTmOCWj4lkEjAM&itag=251&source=youtube&requiressl=yes&mh=aP&mm=31%2C29&mn=sn-gwpa-5bgk%2Csn-gwpa-qxad&ms=au%2Crdu&mv=m&mvi=6&pl=36&initcwndbps=146250&vprv=1&mime=audio%2Fwebm&ns=ULL4mkMO31KDtEhOjkOrmpkF&gir=yes&clen=10210834&dur=634.601&lmt=1544629945422176&mt=1610776131&fvip=6&keepalive=yes&c=WEB&txp=5511222&n=uEjSqtzBZaJyVn&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRAIgKKIEiwQTgXsdKPEyOckgVPs_LMH6KJoeaYmZic_lelECIHXHs1ZnSP5mgtpffNlIMJM3DhxcvDbA-4udFFE6AmVP&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIhAPmhL745RYeL_ffgUJk_xJLC-8riXKMylLTLA_pITYWWAiB2qUIXur8ThW7cLfQ73mIVK61mMZc2ncK6FZWjUHGcUw%3D%3D"
 ```
 
 </details>

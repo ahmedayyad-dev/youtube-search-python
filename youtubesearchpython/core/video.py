@@ -167,12 +167,6 @@ class VideoCore(RequestCore):
             component['link'] = 'https://www.youtube.com/watch?v=' + component['id']
             component['channel']['link'] = 'https://www.youtube.com/channel/' + component['channel']['id']
             videoComponent.update(component)
-        if mode in ['getFormats', None]:
-            videoComponent.update(
-                {
-                    "streamingData": getValue(self.responseSource, ["streamingData"])
-                }
-            )
         if self.enableHTML:
             videoComponent["publishDate"] = getValue(self.HTMLresponseSource, ['microformat', 'playerMicroformatRenderer', 'publishDate'])
             videoComponent["uploadDate"] = getValue(self.HTMLresponseSource, ['microformat', 'playerMicroformatRenderer', 'uploadDate'])

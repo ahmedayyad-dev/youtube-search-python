@@ -120,8 +120,6 @@ async def main():
     print(video)
     videoInfo = await Video.getInfo('https://youtu.be/z0GKGpObgPY')
     print(videoInfo)
-    videoFormats = await Video.('z0GKGpObgPY')
-    print(videoFormats)
 
 
 
@@ -166,42 +164,6 @@ async def main():
     hashtag = Hashtag('ncs', limit = 1)
     result = await hashtag.next()
     print(result)
-
-
-
-
-    '''
-    Getting direct stream URL for a video.
-    You may show search suggestions to users before making any search.
-
-    To use this, you must have PyTube installed.
-    StreamURLFetcher can fetch direct video URLs without any additional network requests (that's really fast).
-    Call `get` or `getAll` method of StreamURLFetcher & pass response returned by `Video.get` as parameter to fetch direct URLs.
-    Getting URLs or downloading streams using youtube-dl or PyTube is can be a slow, because of the fact that they make requests to fetch the same content, which one might have already recieved at the time of showing it to the user etc.
-    StreamURLFetcher makes use of PyTube (if installed) & makes some slight improvements to functioning of PyTube.
-    Avoid instantiating StreamURLFetcher more than once, it will be slow (making global object of the class will be a recommended solution).
-
-    `get` method can be handy for getting URL of a particular kind. `getAll` returns all stream URLs in a dictionary.
-    '''
-
-    fetcher = StreamURLFetcher()
-    '''
-    Call this method after instanciating StreamURLFetcher & avoid calling more than once.
-    '''
-    await fetcher.getJavaScript()
-    '''
-    Get video information.
-    '''
-    videoA = await Video.get("https://www.youtube.com/watch?v=aqz-KE-bpKQ")
-    videoB = await Video.get("https://www.youtube.com/watch?v=ZwNxYJfW-eU")
-
-    '''
-    Get direct stream URLs without any web requests.
-    '''
-    singleUrlA = await fetcher.get(videoA, 22)
-    allUrlsB = await fetcher.getAll(videoB)
-    print(singleUrlA)
-    print(allUrlsB)
 
 
 
