@@ -65,7 +65,6 @@ class ChannelCore(RequestCore):
         response = self.data.json()
 
         self.continuation = None
-
         response = getValue(response, ["onResponseReceivedActions", 0, "appendContinuationItemsAction", "continuationItems"])
         for i in response:
             if getValue(i, ["continuationItemRenderer"]):
@@ -108,7 +107,7 @@ class ChannelCore(RequestCore):
             "prettyPrint": "false"
         })
         self.data = copy.deepcopy(requestPayload)
-        self.data['url'] = f"https://www.youtube.com/c/{self.browseId}"
+        self.data['url'] = f"https://www.youtube.com/@{self.browseId.replace('@','')}"
 
     def parse_channel_username_response(self):
         response = self.data.json()
@@ -153,8 +152,7 @@ class ChannelCore(RequestCore):
             published_time = getValue(video_data, ["publishedTimeText", "simpleText"])
             description = getValue(video_data, ["descriptionSnippet", "runs", 0, "text"])
             thumbnails = getValue(video_data, ["thumbnail", "thumbnails"])
-            rich_thumbnail = getValue(video_data, ["richThumbnail", "movingThumbnailRenderer", "movingThumbnailDetails",
-                                                   "thumbnails", 0, "url"])
+            rich_thumbnail = getValue(video_data, ["richThumbnail", "movingThumbnailRenderer", "movingThumbnailDetails", "thumbnails", 0, "url"])
 
             video_info = {
                 "video_id": video_id,
