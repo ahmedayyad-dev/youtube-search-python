@@ -2,7 +2,7 @@
 
 ##### Search for YouTube videos, channels & playlists. Get video & playlist information using link. Get search suggestions. WITHOUT YouTube Data API v3.
 
-## Fork with improvements and fixes. Updated: December 2024.
+## Fork with improvements and fixes. Updated: December 2025.
 
 ## Installing
 
